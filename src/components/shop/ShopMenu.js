@@ -1,7 +1,8 @@
 import React from 'react';
 import { Breadcrumb } from 'react-bootstrap';
 import ShopItems from './ShopItems';
-import { Card,  Button, Container, Row} from 'react-bootstrap';
+import { Container, Row} from 'react-bootstrap';
+import './ShopMenu.css';
 
 function ShopMenu({title, items}) {
     return (

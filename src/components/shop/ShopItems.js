@@ -1,6 +1,5 @@
 import React from 'react';
-import { Button } from 'react-bootstrap';
-import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText, MDBRow, MDBCol,  } from 'mdbreact';
+import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardText, MDBRow, MDBCol,  } from 'mdbreact';
 
 function ShopItems({id, name, imageUrl, price}) {
     return (

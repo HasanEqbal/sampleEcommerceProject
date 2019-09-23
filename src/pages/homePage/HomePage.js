@@ -1,5 +1,5 @@
 import React from 'react';
-import MenuList from '../components/menu-item/MenuList';
+import MenuList from '../../components/menuItem/MenuList';
 
 function HomePage() {
   return (

@@ -12,9 +12,9 @@ const MenuDropDown = ({history, match}) => {
      Shop By Department
    </MDBDropdownToggle>
    <MDBDropdownMenu color="secondary">
-     {MenuData.map(({title, linkURL}) => {
+     {MenuData.map(({id, title, linkURL}) => {
        return (
-        <MDBDropdownItem onClick={() => history.push(`${match.url}${linkURL}`)}>{title.toUpperCase()}</MDBDropdownItem>
+        <MDBDropdownItem key={id} onClick={() => history.push(`${match.url}${linkURL}`)}>{title.toUpperCase()}</MDBDropdownItem>
        )
      })}
      

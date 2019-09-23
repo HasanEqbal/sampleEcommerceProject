@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card,  Button, Col,Container, Row} from 'react-bootstrap';
+import { Card,  Button, Container, Row} from 'react-bootstrap';
 import MenuData from '../data/menus.json'
 import {withRouter} from 'react-router-dom';
 
