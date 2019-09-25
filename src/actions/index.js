@@ -1,4 +1,4 @@
-import { SET_CURRENT_USER } from './type';
+import { SET_CURRENT_USER, ADD_TO_BAG} from './type';
   
   export const setUserstatus = (user) => {
     return {
@@ -7,4 +7,9 @@ import { SET_CURRENT_USER } from './type';
     }; 
   };
   
-  
+  export const addToBag =(cartItems) => {
+    return {
+      type: ADD_TO_BAG,
+      payload: cartItems
+    }; 
+  };

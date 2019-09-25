@@ -1,7 +1,11 @@
 import React from 'react';
 import { MDBBtn, MDBCard, MDBCardBody, MDBCardImage, MDBCardText, MDBRow, MDBCol,  } from 'mdbreact';
+import { addToBag } from '../../actions/index';
+import ModalPage from '../../modal/Modal'
+import { connect } from 'react-redux'
 
-function ShopItems({id, name, imageUrl, price}) {
+function ShopItems({item, addToBag}) {
+  const {id, name, imageUrl, price} = item;
     return (
         <div>
         <MDBRow>
@@ -11,7 +15,7 @@ function ShopItems({id, name, imageUrl, price}) {
             <MDBCardBody cascade className="px-md-1">
               <MDBCardText>{name}</MDBCardText>
               <MDBCardText>Price: ${price}</MDBCardText>
-              <MDBBtn gradient="aqua">Add to Bag</MDBBtn>
+              <MDBBtn gradient="aqua" onClick={()=> addToBag({id, name, imageUrl, price})}>Add to Bag</MDBBtn>
             </MDBCardBody>
           </MDBCard>
         </MDBCol>
@@ -20,4 +24,8 @@ function ShopItems({id, name, imageUrl, price}) {
          )
 }
 
-export default ShopItems;
+const mapDispatchToProps = dispatch => ({
+  addToBag: cartItem => dispatch(addToBag(cartItem))
+})
+
+export default connect(null, mapDispatchToProps)(ShopItems);

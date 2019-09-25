@@ -13,8 +13,8 @@ function ShopMenu({title, items}) {
             <Container style={ {top:10, bottom: 50} }>
             <Row>
             {items.filter((item, index) => index < 4)
-            .map(({id, ...other})=>{
-                return <ShopItems key={id} {...other}/>
+            .map((item)=>{
+                return <ShopItems key={item.id} item= {item}/>
             })} 
             </Row>
             </Container>
