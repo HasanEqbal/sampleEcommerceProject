@@ -1,11 +1,11 @@
-import React from 'react';
-import MenuList from '../../components/menuItem/MenuList';
+import React from "react";
+import MenuList from "../../components/menuItem/MenuList";
 
 function HomePage() {
   return (
     <>
-    <MenuList/>
-     </>
+      <MenuList />
+    </>
   );
 }
 

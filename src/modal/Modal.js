@@ -1,37 +1,21 @@
-import React, { Component } from 'react';
-import { MDBContainer, MDBBtn, MDBModal, MDBModalBody, MDBModalHeader, MDBModalFooter } from 'mdbreact';
+import React from "react";
+import ReactDOM from "react-dom";
 
-class ModalPage extends Component {
-state={
-  modal4: false,
-}
+const Modal = props => {
+  return ReactDOM.createPortal(
+    <div onClick={props.onDismiss} className="ui dimmer modals visible active">
+      <div
+        onClick={e => e.stopPropagation()}
+        className="ui standard modal visible active"
+        style={{ width: 600, height: 200, top: 150, left: 500 }}
+      >
+        <div className="header">{props.title}</div>
+        <div className="content">{props.content}</div>
+        <div className="actions">{props.action}</div>
+      </div>
+    </div>,
+    document.querySelector("#modal")
+  );
+};
 
-toggle = nr => () => {
-  let modalNumber = 'modal' + nr
-  this.setState({
-    [modalNumber]: !this.state[modalNumber]
-  });
-}
-
-render() {
-  return (
-    <MDBContainer>
-      <MDBBtn gradient="aqua" onClick={this.toggle(4)}>Large modal</MDBBtn>
-      <MDBModal isOpen={this.state.modal4} toggle={this.toggle(4)} size="lg">
-        <MDBModalHeader toggle={this.toggle(4)}>MDBModal title</MDBModalHeader>
-        <MDBModalBody>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat.
-        </MDBModalBody>
-        <MDBModalFooter>
-          <MDBBtn color="secondary" onClick={this.toggle(4)}>Close</MDBBtn>
-          <MDBBtn color="primary">Save changes</MDBBtn>
-        </MDBModalFooter>
-      </MDBModal>
-    </MDBContainer>
-    );
-  }
-}
-
-export default ModalPage;
+export default Modal;
