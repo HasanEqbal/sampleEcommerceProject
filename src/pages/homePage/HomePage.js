@@ -4,7 +4,9 @@ import MenuList from "../../components/menuItem/MenuList";
 function HomePage() {
   return (
     <>
-      <MenuList />
+      <div class="text-center">
+        <MenuList />
+      </div>
     </>
   );
 }

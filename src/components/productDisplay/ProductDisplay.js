@@ -4,7 +4,6 @@ import {
   MDBCard,
   MDBCardBody,
   MDBCardImage,
-  MDBCardText,
   MDBRow,
   MDBCol
 } from "mdbreact";
@@ -12,11 +11,12 @@ import { addToBag } from "../../actions/index";
 import ModalPage from "../../modal/Modal";
 import { connect } from "react-redux";
 import createHistory from "../../history";
+import "./ProductDisplay.css";
 
 function ProductDisplay({ item, addToBag }) {
   const { id, name, imageUrl, price } = item;
   return (
-    <div>
+    <div className="productDisplayComponent">
       <MDBRow>
         <MDBCol className="pb-2 px-md-4">
           <MDBCard narrow>
@@ -26,19 +26,31 @@ function ProductDisplay({ item, addToBag }) {
               src={imageUrl}
               style={{ width: 250, height: 250 }}
             />
-            <MDBCardBody cascade className="px-md-1">
-              <MDBCardText>{name}</MDBCardText>
-              <MDBCardText>Price: ${price}</MDBCardText>
-              <MDBBtn
-                gradient="aqua"
-                onClick={() => {
-                  modalOverLayDiplay({ name, imageUrl });
-                  addToBag({ id, name, imageUrl, price });
+            <div class="text-center">
+              <MDBCardBody
+                cascade
+                className="px-md-1"
+                style={{
+                  height: "120px",
+                  padding: "5px"
                 }}
               >
-                Add to Bag
-              </MDBBtn>
-            </MDBCardBody>
+                <p class="text-center">{name}</p>
+                <p class="text-center">Price: ${price}</p>
+                <MDBBtn
+                  style={{
+                    padding: "10px"
+                  }}
+                  gradient="aqua"
+                  onClick={() => {
+                    modalOverLayDiplay({ name, imageUrl });
+                    addToBag({ id, name, imageUrl, price });
+                  }}
+                >
+                  Add to Bag
+                </MDBBtn>
+              </MDBCardBody>
+            </div>
           </MDBCard>
         </MDBCol>
       </MDBRow>

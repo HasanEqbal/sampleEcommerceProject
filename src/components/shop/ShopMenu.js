@@ -6,7 +6,7 @@ import ProductDisplay from "../productDisplay/ProductDisplay";
 
 function ShopMenu({ title, items }) {
   return (
-    <div>
+    <div className="shopMenu">
       <Breadcrumb>
         <Breadcrumb.Item href="#">{title.toUpperCase()}</Breadcrumb.Item>
       </Breadcrumb>

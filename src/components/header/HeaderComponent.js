@@ -11,7 +11,7 @@ const HeaderComponent = ({ currentUser }) => {
     <div className="headerComponent">
       <MDBContainer>
         <MDBRow>
-          <MDBCol size="11">
+          <MDBCol>
             <MDBNav
               color="aqua-gradient"
               className="font-weight-bold py-4 px-2 mb-4"
@@ -29,7 +29,7 @@ const HeaderComponent = ({ currentUser }) => {
                   to="/"
                   onClick={() => auth.signOut()}
                 >
-                  SIGN OUT
+                  Sign Out
                 </MDBNavLink>
               ) : (
                 <MDBNavLink className="white-text" to="/signin">

@@ -5,10 +5,10 @@ import "./SignInPage.css";
 import { auth, signInWithGoogle } from "../../firebase/firbase-utils";
 
 class SignInPage extends React.Component {
-  renderInput = ({ input, lable, icon }) => {
+  renderInput = ({ input, lable, icon, type }) => {
     return (
       <div>
-        <MDBInput {...input} label={lable} icon={icon} />
+        <MDBInput {...input} label={lable} icon={icon} type={type} />
       </div>
     );
   };
@@ -32,6 +32,7 @@ class SignInPage extends React.Component {
         <p className="h5 text-center mb-4">Sign in</p>
         <div className="grey-text"></div>
         <Field
+          type="text"
           name="email"
           component={this.renderInput}
           icon="envelope"
@@ -44,17 +45,15 @@ class SignInPage extends React.Component {
           icon="lock"
           lable="Password"
         />
-        <MDBBtn className="text-center mb-4" type="submit">
-          Sign In
-        </MDBBtn>
-        <MDBBtn
-          onClick={signInWithGoogle}
-          className="text-center mb-4"
-          social="gplus"
-        >
-          <MDBIcon fab icon="google-plus-g" className="pr-1" /> Sign in with
-          Google +
-        </MDBBtn>
+        <div className="text-center">
+          <MDBBtn gradient="aqua" type="submit">
+            Sign In
+          </MDBBtn>
+          <MDBBtn gradient="peach" onClick={signInWithGoogle}>
+            <MDBIcon fab icon="google-plus-g" className="pr-1" /> Sign In With
+            Google
+          </MDBBtn>
+        </div>
       </form>
     );
   }

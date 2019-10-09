@@ -5,11 +5,11 @@ import { auth, createUserProfileDocument } from "../../firebase/firbase-utils";
 import "./signUpPage.css";
 
 class SignUpPage extends React.Component {
-  renderInput = ({ input, lable, icon }) => {
+  renderInput = ({ input, lable, icon, type }) => {
     return (
-      <div>
-        <MDBInput {...input} label={lable} icon={icon} />
-      </div>
+      <React.Fragment>
+        <MDBInput {...input} label={lable} icon={icon} type={type} />
+      </React.Fragment>
     );
   };
 
@@ -34,7 +34,6 @@ class SignUpPage extends React.Component {
       >
         <p className="h2 text-center mb-4">Create Account</p>
         <p className="h5 text-center mb-4">Sign up</p>
-        <div className="grey-text"></div>
         <Field
           name="displayName"
           component={this.renderInput}
@@ -46,10 +45,17 @@ class SignUpPage extends React.Component {
           component={this.renderInput}
           lable="Email Address"
         />
-        <Field name="password" component={this.renderInput} lable="Password" />
-        <MDBBtn className="text-center" type="submit">
-          Sign Up
-        </MDBBtn>
+        <Field
+          name="password"
+          component={this.renderInput}
+          lable="Password"
+          type="password"
+        />
+        <div className="text-center">
+          <MDBBtn gradient="aqua" type="submit">
+            Sign Up
+          </MDBBtn>
+        </div>
       </form>
     );
   }

@@ -2,10 +2,11 @@ import React from "react";
 import { Breadcrumb } from "react-bootstrap";
 import { Container, Row } from "react-bootstrap";
 import ProductDisplay from "../productDisplay/ProductDisplay";
+import "./BrowseMenu.css";
 
 function BrowseMenu({ title, items }) {
   return (
-    <React.Fragment>
+    <div className="browseMenu">
       <Breadcrumb>
         <Breadcrumb.Item href="#">{title.toUpperCase()}</Breadcrumb.Item>
       </Breadcrumb>
@@ -16,7 +17,7 @@ function BrowseMenu({ title, items }) {
           })}
         </Row>
       </Container>
-    </React.Fragment>
+    </div>
   );
 }
 
