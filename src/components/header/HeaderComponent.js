@@ -9,7 +9,11 @@ import CartIconAndCardDropDown from "../cartItem/CartIconAndCardDropDown";
 const HeaderComponent = ({ currentUser }) => {
   return (
     <div className="headerComponent">
-      <MDBNav color="aqua-gradient" className="font-weight-bold py-2 px-2 mb-2">
+      <MDBNav
+        right
+        color="aqua-gradient"
+        className="font-weight-bold py-2 px-2 mb-2"
+      >
         <MenuDropDown />
         <MDBNavItem>
           <MDBNavLink to="/shop">
